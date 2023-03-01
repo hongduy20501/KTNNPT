@@ -1,0 +1,7 @@
+{
+  "name": "@onionit/server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nobi <nobi@nobidev.com>",
+  "license": "MIT"
+}
