@@ -1,7 +1,13 @@
 {
   "name": "@onionit/server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "author": "Nobi <nobi@nobidev.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
