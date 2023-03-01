@@ -35,7 +35,10 @@ const items = [
 
 const listProducts = () => Array.from(items);
 
+const getProduct = (id) => items.find(item => item.id === id);
+
 module.exports = {
     Product,
     listProducts,
+    getProduct,
 }
