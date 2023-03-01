@@ -26,6 +26,7 @@ app.delete('/products/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const item = models.products.deleteProduct(id);
     if (item) {
+        console.info(`Đã xoá sản phẩm #${id}`);
         res.json(item);
     } else {
         res.status(404).json({
@@ -38,6 +39,7 @@ app.patch('/products/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const item = models.products.patchProduct(id, req.body);
     if (item) {
+        console.info(`Đã sửa sản phẩm #${id} (${JSON.stringify(req.body)})`);
         res.json(item);
     } else {
         res.status(404).json({
