@@ -33,6 +33,15 @@ let items = [
     }),
 ];
 
+while (items.length < 50) {
+    items.push(new Product({
+        id: items.length,
+        name: `Sản phẩm ${items.length}`,
+        price: ~~(Math.random() * 100000) + 10000,
+        picture: 'https://source.unsplash.com/random/300x300',
+    }));
+}
+
 const listProducts = () => Array.from(items);
 
 const getProduct = (id) => items.find(item => item.id === id);
