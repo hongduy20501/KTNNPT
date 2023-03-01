@@ -12,7 +12,7 @@ class Product {
     }
 }
 
-const items = [
+let items = [
     new Product({
         id: 1,
         name: 'Lều',
@@ -37,8 +37,17 @@ const listProducts = () => Array.from(items);
 
 const getProduct = (id) => items.find(item => item.id === id);
 
+const deleteProduct = (id) => {
+    const item = getProduct(id);
+    if (item) {
+        items = items.filter(item => item.id !== id);
+        return item;
+    }
+};
+
 module.exports = {
     Product,
     listProducts,
     getProduct,
+    deleteProduct,
 }

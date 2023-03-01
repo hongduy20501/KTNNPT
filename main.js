@@ -19,6 +19,18 @@ app.get('/products/:id', (req, res) => {
     }
 });
 
+app.delete('/products/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const item = models.products.deleteProduct(id);
+    if (item) {
+        res.json(item);
+    } else {
+        res.status(404).json({
+            error: 'Không tìm thấy sản phẩm',
+        });
+    }
+});
+
 const port = +(process.env.PORT ?? 8080);
 app.listen(port, () => {
     console.log(`Server chạy ở localhost:${port}`);
