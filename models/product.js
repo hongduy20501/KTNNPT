@@ -45,9 +45,18 @@ const deleteProduct = (id) => {
     }
 };
 
+const patchProduct = (id, data) => {
+    const item = getProduct(id);
+    if (item) {
+        Object.assign(item, data);
+        return item;
+    }
+};
+
 module.exports = {
     Product,
     listProducts,
     getProduct,
     deleteProduct,
+    patchProduct,
 }
